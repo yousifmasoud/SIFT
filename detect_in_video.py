@@ -1,12 +1,12 @@
 import cv2
 
 # Load query image
-query = cv2.imread('query2.jpg', cv2.IMREAD_GRAYSCALE)
+query = cv2.imread('input/query2.jpg', cv2.IMREAD_GRAYSCALE)
 orb = cv2.ORB_create()
 kp_query, des_query = orb.detectAndCompute(query, None)
 
 # Set up video
-cap = cv2.VideoCapture('video.mp4')
+cap = cv2.VideoCapture('input/video.mp4')
 
 # Use Hamming distance with cross-check for ORB
 bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)

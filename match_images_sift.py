@@ -3,11 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Load images
-query = cv2.imread('query.jpg', cv2.IMREAD_GRAYSCALE)
-target = cv2.imread('target.jpg', cv2.IMREAD_GRAYSCALE)
-
-if query is None or target is None:
-    raise FileNotFoundError("Image not found.")
+query = cv2.imread('input/query.jpg', cv2.IMREAD_GRAYSCALE)
+target = cv2.imread('input/target.jpg', cv2.IMREAD_GRAYSCALE)
 
 # Create SIFT detector with adjusted parameters
 sift = cv2.SIFT_create(nfeatures=500, contrastThreshold=0.04, edgeThreshold=10) #DoG
@@ -56,5 +53,5 @@ if len(good) >= MIN_MATCH_COUNT:
             plt.imshow(result)
             plt.title('SIFT Matching with Homography + Spread Filter')
             plt.axis('off')
-            plt.savefig('result_sift_DoG.png', dpi=600)
+            plt.savefig('output/result_sift_DoG.png', dpi=600)
             plt.show()

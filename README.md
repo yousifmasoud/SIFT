@@ -15,7 +15,7 @@ Detects and matches keypoints between two images using the ORB algorithm and Ham
 
 **Example Output:**
 
-![ORB Matching Result](result.png)
+![ORB Matching Result](output/result.png)
 
 ---
 
@@ -31,7 +31,7 @@ Detects keypoints using SIFT (based on Difference of Gaussian). Applies Lowe's r
 
 **Example Output:**
 
-![SIFT Matching Result](result_sift_DoG.png)
+![SIFT Matching Result](output/result_sift_DoG.png)
 
 ---
 
@@ -54,6 +54,7 @@ Uses SIFT (DoG-based) to match a query image in each frame of a video. Matches a
 - Displays real-time detection results  
 - Exit with `ESC` key
 
+* Note: If an error occurs when running the file, try running the following command: `LD_PRELOAD=/lib/x86_64-linux-gnu/libpthread.so.0 python3 detect_in_video_sift.py`
 ---
 
 ## Requirements

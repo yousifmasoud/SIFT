@@ -3,14 +3,14 @@ import numpy as np
 import os
 
 # Load target image (used for matching)
-target = cv2.imread('query2.jpg', cv2.IMREAD_GRAYSCALE)
+target = cv2.imread('input/query2.jpg', cv2.IMREAD_GRAYSCALE)
 
 # Initialize SIFT (uses DoG internally)
 sift = cv2.SIFT_create()
 kp_query, des_query = sift.detectAndCompute(target, None)
 
 # Set up video
-cap = cv2.VideoCapture('video.mp4')
+cap = cv2.VideoCapture('input/video.mp4')
 
 # FLANN-based matcher for SIFT
 FLANN_INDEX_KDTREE = 1

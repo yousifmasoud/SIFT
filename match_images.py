@@ -2,8 +2,8 @@ import cv2
 import matplotlib.pyplot as plt
 
 # Load images
-query = cv2.imread('query.jpg', cv2.IMREAD_GRAYSCALE)
-target = cv2.imread('target.jpg', cv2.IMREAD_GRAYSCALE)
+query = cv2.imread('input/query.jpg', cv2.IMREAD_GRAYSCALE)
+target = cv2.imread('input/target.jpg', cv2.IMREAD_GRAYSCALE)
 
 # Initiate ORB detector
 orb = cv2.ORB_create()
@@ -27,5 +27,5 @@ combinedImage = cv2.drawMatches(query,kpQuery,
  
 plt.figure(figsize=(16,16))
 plt.imshow(combinedImage)
-plt.savefig('result.png',dpi=600)
+plt.savefig('output/result.png',dpi=600)
 plt.show()
